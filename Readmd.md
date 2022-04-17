@@ -17,3 +17,7 @@
 - Step 11: terraform init 
 - Step 12: terraform plan
 - Step 13: terraform apply 
+- Step 14: Goto AWS console and Verify the se bucket 
+- Step 15: terraform validate
+- step 16: terraform fmt
+- Step 17: terraform destroy
