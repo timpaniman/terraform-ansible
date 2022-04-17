@@ -8,6 +8,8 @@
 - https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/home
 - Step 4: Add the Admin Access to this user and 
 - Step 5: Download the key file 
-- Step 6: Run aws configure command 
+- Step 6: Run aws configure 
 - Step 7: put the keys
-- Step 8: 
+
+- Step 8: run this command ``` aws s3 ls
+- Step 9: terraform --version
