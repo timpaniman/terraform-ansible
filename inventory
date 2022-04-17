@@ -1,0 +1,18 @@
+node-1 ansible_ssh_host=3.94.92.223
+#node-2 ansible_ssh_host=172.31.39.82
+#master-node ansible_ssh_host=172.31.46.128
+
+
+[web]
+node-1
+
+
+[dc:children]
+
+web
+#db
+
+[dc:vars]
+
+ansible_ssh_user=ec2-user
+ansible_ssh_private_key_file=./deployer
