@@ -53,7 +53,7 @@ resource "aws_instance" "linux" {
   ami           = "ami-0c02fb55956c7d316"
   instance_type = "t2.micro"
   key_name      = aws_key_pair.deployer1.key_name
-  # count         = 1
+  # count         = 1 
   vpc_security_group_ids = ["${aws_security_group.allow_SSH.id}"]
   tags = {
     "Name" = "Linux-Node"
