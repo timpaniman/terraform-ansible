@@ -20,4 +20,4 @@
 - Step 14: Goto AWS console and Verify the se bucket 
 - Step 15: terraform validate
 - step 16: terraform fmt
-- Step 17: terraform destroy
+- Step 17: terraform destroy and yes 
