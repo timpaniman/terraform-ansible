@@ -6,6 +6,7 @@ node-2 ansible_ssh_host=18.208.169.239 ansible_ssh_user=ubuntu ansible_ssh_priva
 
 [web]
 node-1
+node-2
 
 [db]
 node-2

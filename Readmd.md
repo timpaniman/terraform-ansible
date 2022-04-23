@@ -39,3 +39,7 @@
 - Step 8: chmod 400 deployer  
 - Step 9: ansible all -i '3.80.114.94,' -m ping -u ec2-user --private-key=./deployer
 - Step 10: ansible all -i '3.80.114.94,' -m shell -a"ls -l /opt/a.txt" -u ec2-user --private-key=./deployer
+## file module 
+- Step 11: ansible all -i '3.80.114.94,' -m file -a"dest=/opt/a.txt"   -u ec2-user --private-key=./deployer -b  
+## copy module            
+- Step 12: ansible all -i '3.80.114.94,' -m copy -a"src=./index.html dest=/home/ec2-user/a.txt"   -u ec2-user --private-key=./deployer -b
