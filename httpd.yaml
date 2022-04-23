@@ -6,12 +6,12 @@
     yum:
         name: httpd
         state: present
-
+# starting httpd
   - name: start httpd 
     service:
         name: httpd
         state: restarted
-
+# Enablimg httpd 
   - name: Enabled httpd 
     service:
         name: httpd

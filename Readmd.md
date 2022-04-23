@@ -46,3 +46,8 @@
 ## Package management 
 - Step 13: ansible all -i '3.80.114.94,' -m yum -a"name=git state=present" -u ec2-user --private-key=./deployer -b
 - Step 14: ansible all -i '3.80.114.94,' -m yum -a"name=git state=absent" -u ec2-user --private-key=./deployer -b
+
+## inventory file 
+- Step 15: copy ip address of Linux NODE 
+- Step 16: replace you line no. 1 in inventory file 
+- Step 17 : ansible node-1 -m ping 
