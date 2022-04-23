@@ -21,3 +21,10 @@
 - Step 15: terraform validate
 - step 16: terraform fmt
 - Step 17: terraform destroy and yes 
+
+
+# EC2 Creation
+- Step 1: switchto ec2 branch 
+- step 2: terrafrom init
+- step 2: terraform plan 
+- step 2: terraform apply 
