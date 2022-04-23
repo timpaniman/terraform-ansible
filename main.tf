@@ -15,7 +15,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "b" {
-  bucket = "my-tf-test-bucket-sl-varun1113432"
+  bucket = "my-tf-test-bucket-sl-varun88"
 
   tags = {
     Name        = "My bucket"

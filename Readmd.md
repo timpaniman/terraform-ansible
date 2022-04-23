@@ -21,3 +21,11 @@
 - Step 15: terraform validate
 - step 16: terraform fmt
 - Step 17: terraform destroy and yes 
+
+# Ansible
+- Step 1: ansible --version 
+## Adhoc Command
+- Step 2: ansible localhost -m ping 
+- Step 3: ansible localhost -m shell -a"ls  ~/"
+- Step 4: ansible localhost -m shell -a"mkdir -p  ~/opt"
+- Step 5: ansible localhost -m shell -a"touch -p  ~/opt"
