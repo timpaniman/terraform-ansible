@@ -34,7 +34,7 @@
 - Step 3: ansible localhost -m shell -a"ls ~/"
 - Step 4: ansible localhost -m shell -a"mkdir -p ~/opt"
 - Step 5: ansible localhost -m shell -a"touch -p ~/opt"
-- Step 6:git switch ansible 
-- Step 7:git pull 
-- Step 8:chmod 400 deployer
-- Step 9:ansible all -i '3.80.114.94,' -m ping -u ec2-user --private-key=./deployer
+- Step 6: git switch ansible 
+- Step 7: git pull 
+- Step 8: chmod 400 deployer  
+- Step 9: ansible all -i '3.80.114.94,' -m ping -u ec2-user --private-key=./deployer
