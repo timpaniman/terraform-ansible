@@ -51,3 +51,6 @@
 - Step 15: copy ip address of Linux NODE 
 - Step 16: replace you line no. 1 in inventory file 
 - Step 17 : ansible node-1 -m ping 
+
+## Ansible playbook 
+- Step 18: ansible-playbook httpd.yaml
