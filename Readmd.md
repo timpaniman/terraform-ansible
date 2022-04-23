@@ -43,3 +43,6 @@
 - Step 11: ansible all -i '3.80.114.94,' -m file -a"dest=/opt/a.txt"   -u ec2-user --private-key=./deployer -b  
 ## copy module            
 - Step 12: ansible all -i '3.80.114.94,' -m copy -a"src=./index.html dest=/home/ec2-user/a.txt"   -u ec2-user --private-key=./deployer -b
+## Package management 
+- Step 13: ansible all -i '3.80.114.94,' -m yum -a"name=git state=present" -u ec2-user --private-key=./deployer -b
+- Step 14: ansible all -i '3.80.114.94,' -m yum -a"name=git state=absent" -u ec2-user --private-key=./deployer -b
