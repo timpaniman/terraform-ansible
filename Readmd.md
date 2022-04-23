@@ -26,5 +26,11 @@
 # EC2 Creation
 - Step 1: switchto ec2 branch 
 - step 2: terrafrom init
-- step 2: terraform plan 
-- step 2: terraform apply 
+- step 3: terraform plan 
+- step 4: terraform apply 
+- Step 5: Verify your vm's
+## Adhoc command for Remote VM's
+Step 2: ansible localhost -m ping
+Step 3: ansible localhost -m shell -a"ls ~/"
+Step 4: ansible localhost -m shell -a"mkdir -p ~/opt"
+Step 5: ansible localhost -m shell -a"touch -p ~/opt"
