@@ -38,3 +38,4 @@
 - Step 7: git pull 
 - Step 8: chmod 400 deployer  
 - Step 9: ansible all -i '3.80.114.94,' -m ping -u ec2-user --private-key=./deployer
+- Step 10: ansible all -i '3.80.114.94,' -m shell -a"ls -l /opt/a.txt" -u ec2-user --private-key=./deployer
