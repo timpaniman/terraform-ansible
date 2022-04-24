@@ -1,3 +1,9 @@
+# Use the below commands on Ubuntu system to install ansible software
+sudo apt-get install -f
+sudo apt-get install software-properties-common
+sudo apt-add-repository ppa:ansible/ansible
+sudo apt-get update
+sudo apt-get install ansible
 
 # AWS Terraform Infra Creation
 - Step 1: Clone the repo
@@ -63,19 +69,12 @@
 6. Remove unwanted directory
 7. Create Ansible role playbook
 
-## Use the below commands on Ubuntu system to install ansible software
-sudo apt-get install -f
-sudo apt-get install software-properties-common
-sudo apt-add-repository ppa:ansible/ansible
-sudo apt-get update
-sudo apt-get install ansible
-
 
 - Step 2: Create Ansible Role
-2.1 Once we have our Ansible environment ready, next create a project. I will create a 
+- 2.1 Once we have our Ansible environment ready, next create a project. I will create a 
 new project base to demonstrate Ansible roles example
 mkdir base
-2.2 To create an ansible role, use ansible-galaxy init <role_name> to create the role 
+- 2.2 To create an ansible role, use ansible-galaxy init <role_name> to create the role 
 directory structure
 2.3 Let’s create the role in our <project>/roles directory i.e. ~/base/roles/motd
 cd base
@@ -91,9 +90,7 @@ cd tasks
 ls
 vi main.yml
 
-3.2 Enter the below code
-
-```
+- 3.2 Enter the below code
 ---
 # tasks file for Web-role
 - name: copy Web-role file
@@ -104,7 +101,7 @@ vi main.yml
      group: root
      mode: 0444
 
-Step 4: Create Ansible Template
+- Step 4: Create Ansible Template
 4.1 Create the template content which will be used to update /etc/motd in our ansible roles examples. I will create a new template file under the templates directory using some variables:
 
 cd ..
@@ -132,12 +129,12 @@ vi main.yml
 system_manager: admin@golinuxcloud.com
  
 
-Step 6: Remove unwanted directories (Optional)
+- Step 6: Remove unwanted directories (Optional)
 
 6.1 This step is completely optional. In this ansible roles example, we will not use other directories so we are deleting them. After deleting the additional directories you can use the tree command to list the directory structure of motd roles
 cd ..
 rm -rf handlers tests vars
-Step 7: Create an ansible-role playbook
+- Step 7: Create an ansible-role playbook
 7.1 Now after you create an ansible role structure, we need a playbook file that will deploy the role to our managed hosts. I will create my playbook file Web-role-role.yml under base project directory
 cd ..
 cd ..
@@ -159,11 +156,8 @@ sudo vi Web-role-role.yml
 
 
  
-Step 8: Deploy Ansible role playbook
+- Step 8: Deploy Ansible role playbook
 8.1 Execute the below command:
 ansible-playbook Web-role-role.yml
 
-Note: In case you get an error asking you to install sshpass program as shown below, execute the command: sudo apt install sshpass and then run the ansible-playbook Web-role-role.yml command.
- 
- 
-ll
+
