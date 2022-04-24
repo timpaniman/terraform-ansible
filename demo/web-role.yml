@@ -1,0 +1,12 @@
+
+---
+- name: use demor role playbook
+  hosts: node-1
+  user: ansible
+  become: true
+
+  roles:
+    - role: web
+      system_manager: admin@golinuxcloud.com
+
+

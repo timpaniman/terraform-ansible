@@ -1,2 +1,10 @@
 ---
-# tasks file for web
+# tasks file for demor
+- name: copy demor file
+  template:
+     src: templates/demor.j2
+     dest: /etc/demor
+     owner: root
+     group: root
+     mode: 0444
+

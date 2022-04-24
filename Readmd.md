@@ -54,3 +54,114 @@
 
 ## Ansible playbook 
 - Step 18: ansible-playbook httpd.yaml
+
+# Ansible Role 
+2. Create Ansible Role
+3. Create Ansible tasks
+4. Create Ansible template
+5. Create Ansible variable
+6. Remove unwanted directory
+7. Create Ansible role playbook
+
+## Use the below commands on Ubuntu system to install ansible software
+sudo apt-get install -f
+sudo apt-get install software-properties-common
+sudo apt-add-repository ppa:ansible/ansible
+sudo apt-get update
+sudo apt-get install ansible
+
+
+- Step 2: Create Ansible Role
+2.1 Once we have our Ansible environment ready, next create a project. I will create a 
+new project base to demonstrate Ansible roles example
+mkdir base
+2.2 To create an ansible role, use ansible-galaxy init <role_name> to create the role 
+directory structure
+2.3 Let’s create the role in our <project>/roles directory i.e. ~/base/roles/motd
+cd base
+mkdir roles
+cd roles
+- ansible-galaxy init demor
+2.4 You can use the ls command to list the ansible role directory structure
+cd demor
+ls
+Step 3: Create Ansible Tasks
+3.1 Now update the /etc/motd file using ansible playbook roles. Create tasks to use the main.yml file present inside the tasks folder.
+cd tasks
+ls
+vi main.yml
+
+3.2 Enter the below code
+---
+# tasks file for demor
+- name: copy demor file
+  template:
+     src: templates/demor.j2
+     dest: /etc/demor
+     owner: root
+     group: root
+     mode: 0444
+
+Step 4: Create Ansible Template
+4.1 Create the template content which will be used to update /etc/motd in our ansible roles examples. I will create a new template file under the templates directory using some variables:
+
+cd ..
+cd templates
+vi demor.j2
+ 
+4.2 Enter the below details:
+Welcome to {{ ansible_hostname }}
+
+This file was created on {{ ansible_date_time.date }}
+Go away if you have no business being here
+
+Contact {{ system_manager }} if anything is wrong
+Step 5: Create Ansible Variable
+
+5.1 We will use the defaults folder to define custom variables which are used in our template file templates/demor.j2
+cd ..
+cd defaults
+ls
+vi main.yml
+ 
+5.2 Enter the below details in the file:
+---
+# defaults file for demor
+system_manager: admin@golinuxcloud.com
+ 
+
+Step 6: Remove unwanted directories (Optional)
+
+6.1 This step is completely optional. In this ansible roles example, we will not use other directories so we are deleting them. After deleting the additional directories you can use the tree command to list the directory structure of motd roles
+cd ..
+rm -rf handlers tests vars
+Step 7: Create an ansible-role playbook
+7.1 Now after you create an ansible role structure, we need a playbook file that will deploy the role to our managed hosts. I will create my playbook file demor-role.yml under base project directory
+cd ..
+cd ..
+sudo vi demor-role.yml
+
+ 
+
+7.2 Enter the below code in the file
+
+---
+- name: use demor role playbook
+  hosts: webservers
+  user: ansible
+  become: true
+
+  roles:
+    - role: demor
+      system_manager: admin@golinuxcloud.com
+
+
+ 
+Step 8: Deploy Ansible role playbook
+8.1 Execute the below command:
+ansible-playbook demor-role.yml
+
+Note: In case you get an error asking you to install sshpass program as shown below, execute the command: sudo apt install sshpass and then run the ansible-playbook demor-role.yml command.
+ 
+ 
+ll
