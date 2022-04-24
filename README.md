@@ -81,23 +81,25 @@ directory structure
 cd base
 mkdir roles
 cd roles
-- ansible-galaxy init demor
+- ansible-galaxy init Web-role
 2.4 You can use the ls command to list the ansible role directory structure
-cd demor
+cd Web-role
 ls
-Step 3: Create Ansible Tasks
+- Step 3: Create Ansible Tasks
 3.1 Now update the /etc/motd file using ansible playbook roles. Create tasks to use the main.yml file present inside the tasks folder.
 cd tasks
 ls
 vi main.yml
 
 3.2 Enter the below code
+
+```
 ---
-# tasks file for demor
-- name: copy demor file
+# tasks file for Web-role
+- name: copy Web-role file
   template:
-     src: templates/demor.j2
-     dest: /etc/demor
+     src: templates/Web-role.j2
+     dest: /etc/Web-role
      owner: root
      group: root
      mode: 0444
@@ -107,7 +109,7 @@ Step 4: Create Ansible Template
 
 cd ..
 cd templates
-vi demor.j2
+vi Web-role.j2
  
 4.2 Enter the below details:
 Welcome to {{ ansible_hostname }}
@@ -118,7 +120,7 @@ Go away if you have no business being here
 Contact {{ system_manager }} if anything is wrong
 Step 5: Create Ansible Variable
 
-5.1 We will use the defaults folder to define custom variables which are used in our template file templates/demor.j2
+5.1 We will use the defaults folder to define custom variables which are used in our template file templates/Web-role.j2
 cd ..
 cd defaults
 ls
@@ -126,7 +128,7 @@ vi main.yml
  
 5.2 Enter the below details in the file:
 ---
-# defaults file for demor
+# defaults file for Web-role
 system_manager: admin@golinuxcloud.com
  
 
@@ -136,32 +138,32 @@ Step 6: Remove unwanted directories (Optional)
 cd ..
 rm -rf handlers tests vars
 Step 7: Create an ansible-role playbook
-7.1 Now after you create an ansible role structure, we need a playbook file that will deploy the role to our managed hosts. I will create my playbook file demor-role.yml under base project directory
+7.1 Now after you create an ansible role structure, we need a playbook file that will deploy the role to our managed hosts. I will create my playbook file Web-role-role.yml under base project directory
 cd ..
 cd ..
-sudo vi demor-role.yml
+sudo vi Web-role-role.yml
 
  
 
 7.2 Enter the below code in the file
 
 ---
-- name: use demor role playbook
+- name: use Web-role role playbook
   hosts: webservers
   user: ansible
   become: true
 
   roles:
-    - role: demor
+    - role: Web-role
       system_manager: admin@golinuxcloud.com
 
 
  
 Step 8: Deploy Ansible role playbook
 8.1 Execute the below command:
-ansible-playbook demor-role.yml
+ansible-playbook Web-role-role.yml
 
-Note: In case you get an error asking you to install sshpass program as shown below, execute the command: sudo apt install sshpass and then run the ansible-playbook demor-role.yml command.
+Note: In case you get an error asking you to install sshpass program as shown below, execute the command: sudo apt install sshpass and then run the ansible-playbook Web-role-role.yml command.
  
  
 ll
