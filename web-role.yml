@@ -1,7 +1,7 @@
 
 ---
 - name: use demor role playbook
-  hosts: node-1
+  hosts: node-1:localhost
   user: ansible
   become: true
 

@@ -1,4 +1,4 @@
-node-1 ansible_ssh_host=3.80.114.94
+node-1 ansible_ssh_host=3.87.252.76
 node-2 ansible_ssh_host=54.144.92.214 ansible_ssh_user=ubuntu ansible_ssh_private_key_file=./deployer
 
 #master-node ansible_ssh_host=172.31.46.128
