@@ -13,7 +13,7 @@
 
 - Step 8: run this command ``` aws s3 ls
 - Step 9: terraform --version
-- step 10: git switch s3
+- step 10: git switch ec2
 - Step 11: terraform init 
 - Step 12: terraform plan
 - Step 13: terraform apply 
