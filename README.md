@@ -91,6 +91,7 @@ ls
 vi main.yml
 
 - 3.2 Enter the below code
+```
 ---
 # tasks file for Web-role
 - name: copy Web-role file
