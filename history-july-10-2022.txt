@@ -1,0 +1,393 @@
+mkdir local-tf
+
+cd local-tf/
+
+vim main.tf
+
+terraform init
+
+terraform plan
+
+terraform validate
+
+vim main.tf 
+
+cat main.tf 
+
+terraform fmt
+
+cat main.tf 
+
+terraform apply 
+
+ll
+
+vim  main.tf 
+
+terraform plan
+
+terraform apply 
+
+cat info.txt 
+
+terraform destroy
+
+ll
+
+vim terraform.tfstate
+
+terraform plan
+
+vim terraform.tfstate
+
+terraform apply 
+
+vim terraform.tfstate
+
+cat main.tf 
+
+cd ..
+
+ll
+
+cd terraform-ansible/
+
+git switch main 
+
+git status
+
+git rm .
+
+git rm -r .
+
+git rm -rf .
+
+git status
+
+git switch main 
+
+git branch 
+
+git switch -c local-file 
+
+ll
+
+rm -rf terraform.tfstate*
+
+ll
+
+vim main.tf
+
+terraform init
+
+terraform paln 
+
+terraform plan
+
+terraform apply 
+
+git add . 
+
+git push 
+
+resource "local_file" "file" {
+
+}
+
+git push 
+
+git push --set-upstream origin local-file
+
+ll -a
+
+vim .gitignore
+
+git add .
+
+git commit -am"adding .gitignore"
+
+git push 
+
+C#  Local .terraform directories
+
+**/.terraform/*
+
+# .tfstate files
+
+*.tfstate
+
+*.tfstate.*
+
+# Ignore any .tfvars files that are generated automatically for each Terraform run. Most
+
+# .tfvars files are managed as part of configuration and so should be included in
+
+# version control.
+
+#
+
+git push --set-upstream origin local-file
+
+cat main.tf 
+
+ll
+
+cat main.tf 
+
+ip r
+
+ll
+
+git branch 
+
+git switch ansible
+
+ll
+
+less main.tf 
+
+aws configure
+
+aws s3 ls 
+
+terraform init
+
+terraform plan 
+
+terraform apply 
+
+ansible localhost -m ping
+
+ansible all -i '3.88.204.12,' -m ping  -u ec2-user --private-key=./deployer -b
+
+vim ~/.ssh/known_hosts 
+
+ansible all -i '3.88.204.12,' -m ping  -u ec2-user --private-key=./deployer -b
+
+ll
+
+chmod 400 deployer
+
+ansible all -i '3.88.204.12,' -m ping  -u ec2-user --private-key=./deployer -b
+
+ll
+
+vim inventory 
+
+ansible node-1 -m ping
+
+vim inventory 
+
+ansible node-1 -m ping -vvv
+
+cat inventory 
+
+ll
+
+vim ping.yaml 
+
+vim httpd.yaml 
+
+ll
+
+ansible node-1 -m shell -a"mkdir /opt/test"
+
+ansible node-1 -m shell -a"ls -l /opt/"
+
+ansible node-1 -m shell -a"yum install htop -y"
+
+ll
+
+ansible node-1 -m copy -a"src=./deployer.pub dest=/opt"
+
+ansible node-1 -m shell -a"ls -l /opt/"
+
+ansible-doc copy
+
+ansible-doc ping
+
+ansible node-1 -m yum -a"name=elinks state=present"
+
+ansible node-1 -m yum -a"name=elinks state=absent"
+
+ansible node-1 -m yum -a"name=httpd state=present"
+
+ansible node-1 -m service -a"name=httpd state=started"
+
+ansible node-1 -m service -a"name=httpd state=stopped"
+
+ansible node-1 -m setup
+
+ll
+
+mv copy.yaml.yml copy.yaml
+
+cat copy.yaml 
+
+ansible-playbook copy.yaml -C
+
+ansible-playbook copy.yaml 
+
+cat copy.yaml 
+
+git add . && git commit -am"adding copy.yaml" && git push 
+
+cat copy.yaml 
+
+cat in
+
+cat inventory 
+
+ll
+
+ansible-playbook elinks.yml -C
+
+ansible-playbook elinks.yml 
+
+vim inventory 
+
+ansible node-2 -m ping
+
+git add . && git commit -am"adding inventry" && git push 
+
+ansible node-2 -m ping
+
+ansible all -m ping
+
+ansible node-1:node-2 -m ping
+
+git add . && git commit -am"adding inventry" && git push 
+
+ansible node-1 -m yum -a"name=httpd state=absent"
+
+ansible-playbook httpd.yaml -C
+
+ansible-playbook httpd.yaml
+
+ansible web -m ping
+
+vim inventory 
+
+vim /etc/ansible/hosts 
+
+vim inventory 
+
+ansible node-2 -m shell -a "ls -l /opt"
+
+ansible node-2 -m shell -a "ls -l /"
+
+ll
+
+git add . && git commit -am"adding inventry" && git push 
+
+ansible-playbook httpd.yaml
+
+ansible-playbook httpd-variable.yaml 
+
+ll
+
+cd demo/
+
+ll
+
+tree web/
+
+mkdir web2
+
+cd web2/
+
+ansible-galaxy init
+
+cd ..
+
+rm -rf web2/
+
+ansible-galaxy web2 init
+
+ansible-galaxy init web2 
+
+tree web2
+
+cd web
+
+tree
+
+cat defaults/main.yml 
+
+cat tasks/main.yml 
+
+cd ..
+
+ll
+
+cd ..
+
+ll
+
+git add . && git commit -am"adding inventry" && git push 
+
+git switch ansible-role 
+
+ll
+
+tree web
+
+cd web/
+
+ll
+
+tree
+
+cat defaults/main.yml 
+
+cd ..
+
+cd -
+
+cd demo/
+
+ll
+
+tree 
+
+ll
+
+cd ..
+
+ll
+
+cat main.tf 
+
+ll
+
+vim web-role.yml 
+
+ll
+
+ll web
+
+ansible-playbook web-role.yml 
+
+tree  web
+
+cat web/tasks/main.yml 
+
+cat web/templates/demor.j2 
+
+cat web-role.yml 
+
+git switch -c
+
+git switch -
+
+git add . && git commit -am"adding inventry" && git push 
+
+git switch -
+
+git branch 
+
+terraform destroy 
+
+history | cut -c 8-
+
+
