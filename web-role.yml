@@ -1,6 +1,6 @@
 
 ---
-- name: use demor role playbook
+- name: use demo role playbook
   hosts: localhost
   user: ansible
   become: true
