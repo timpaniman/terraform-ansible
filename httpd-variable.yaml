@@ -1,5 +1,5 @@
 ---
-- hosts: test
+- hosts: node-1
   become: yes
   vars: 
     doc_root : /var/www/html/
