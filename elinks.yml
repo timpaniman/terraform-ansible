@@ -1,0 +1,8 @@
+---
+- hosts: node-1
+  tasks:
+  - name: Install Elinks
+    yum:
+      name: elinks
+      state: latest
+    
