@@ -1,15 +1,7 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 3.27"
-    }
-  }
+resource "local_file" "file" {
 
-  required_version = ">= 0.14.9"
-}
+  content = "This is DevOps TF Class by Varun "
 
-provider "aws" {
-  profile = "default"
-  region  = "us-east-1"
+  filename = "info.txt"
+
 }
