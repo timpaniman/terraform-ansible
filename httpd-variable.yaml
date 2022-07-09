@@ -1,6 +1,8 @@
 ---
 - hosts: test
   become: yes
+  vars: 
+    doc_root : /var/www/html/
   tasks:
 # Installing httpd
   - name: 1. Install httpd 
@@ -21,7 +23,7 @@
   - name: 4. Index file copy on root location
     copy:
       src: ./index.html
-      dest: /var/www/html/
+      dest: "{{ doc_root }}"
       owner: apache
       group: apache
       mode: 0644
