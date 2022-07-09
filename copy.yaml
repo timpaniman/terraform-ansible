@@ -1,0 +1,8 @@
+---
+- hosts: node-1
+  tasks:
+  - name: copy file from controller to remote
+    copy:
+      src: ./index.html
+      dest: /opt/index.html
+    
